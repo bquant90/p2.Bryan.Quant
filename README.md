@@ -3,6 +3,8 @@ I am tasked to create a personal magic mirror, using p5.js, that will satisfy va
 
 Should they need more information, they can select the button above the "back to menu" button to view more information or modify a selection. Users are therefore able to customize the display to fit their needs. With that said, here are some sketches that show what the user can do with the mirror:
 
+<strong>NOTE:</strong> The stick figure is a representation of a human using the mirror. The height of the figure <strong>does not</strong> imply that the user cannot reach the buttons.
+
 Menu Screen:
 
 ![Mirror Menu2](https://user-images.githubusercontent.com/92451196/202049921-6c749121-d43b-4d73-8700-f31eac5a3cf4.png)
