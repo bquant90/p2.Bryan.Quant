@@ -23,4 +23,6 @@ Lastly, health screen:
 
 ![Health Screen2](https://user-images.githubusercontent.com/92451196/202050588-828b9bd0-13ea-473b-8ec2-2e244d3a2f6d.png)
 
-As you can see from the images, I have purposely kept the display simple so users do not need to tap all over the mirror to do something. After the user is finished using the mirror, they can power off the display when not needed. Here is a simple GIF that goes through the many functions of the mirror:
+As you can see from the images, I have purposely kept the display simple so users do not need to tap all over the mirror to do something. After the user is finished using the mirror, they can power off the display when not needed. Here is a simple GIF that shows the user navigating to the calendar menu:
+
+![p2 Bryan Quant](https://user-images.githubusercontent.com/92451196/202094984-6f7135e1-5fe4-4752-b2f7-e44f94904905.gif)
