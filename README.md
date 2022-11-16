@@ -1,4 +1,17 @@
 # Personal Magic Mirror Project Report
+
+## Links
+
+[My GitHub Repository](https://github.com/bquant90/p2.Bryan.Quant)
+
+[GitPage](https://bquant90.github.io/p2.Bryan.Quant/)
+
+[Download P5.js file + Components](https://github.com/bquant90/p2.Bryan.Quant/archive/refs/heads/main.zip)
+
+[Youtube Video Demonstration](https://youtu.be/TslSkzbYNNI)
+
+##
+
 I am tasked to create a personal magic mirror, using p5.js, that will satisfy various user needs such as viewing a calendar, looking at news, or playing music. The mirror is meant to be used in a bathroom. I put the various actions the user can take off to the left, so they are able to see themselves as well as the display. When the display is powered on (which is initially assumed at the start of the program), the user should be able to select various buttons to assist them with their needs. Each selection displays a simple amount of information, so the user is not overwhelmed with information.
 
 Should they need more information, they can select the button above the "back to menu" button to view more information or modify a selection. Users are therefore able to customize the display to fit their needs. With that said, here are some sketches that show what the user can do with the mirror:
@@ -26,3 +39,5 @@ Lastly, health screen:
 As you can see from the images, I have purposely kept the display simple so users do not need to tap all over the mirror to do something. After the user is finished using the mirror, they can power off the display when not needed. Here is a simple GIF that shows the user navigating to the calendar menu:
 
 ![p2 Bryan Quant](https://user-images.githubusercontent.com/92451196/202094984-6f7135e1-5fe4-4752-b2f7-e44f94904905.gif)
+
+Other functionalities can be seen in the youtube video demo in the "links" section. Try using the mirror for yourself using the download link!
