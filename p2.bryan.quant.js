@@ -2,26 +2,29 @@
 // Background
 let mirror_img;
 
-// Icons
-let icons = [];
-
-function preload() {
-  icons[0] = loadImage('calendar.png');
-  icons[1] = loadImage('news.png');
-  icons[2] = loadImage('weather.png');
-  icons[3] = loadImage('health.png');
-  icons[4] = loadImage('music.png');
-  icons[5] = loadImage('options.png');
-  icons[6] = loadImage('power_button.png');
-  icons[7] = loadImage('cloudy_weather.png');
-  icons[8] = loadImage('play_button.png');
-  icons[9] = loadImage('stop_button.png');
-}
+// Icons and images
+const image_files = ['calendar.png', 'news.png', 'weather.png', 'health.png', 'music.png', 'options.png', 'power_button.png', 'cloudy_weather.png', 'play_button.png', 'stop_button.png'];
+const images = {};
 
 // Calendar images
-let calendarImages = {};
-calendarImages.october_2022 = loadImage('october_2022.png');
-calendarImages.november_2022 = loadImage('november_2022.png');
+let calendar_images = {};
+
+// For music
+let song;
+
+function preload() {
+  // Loading images
+  for (let i = 0; i < image_files.length; i++) {
+    const image_name = image_files[i].split('.')[0];
+    images[image_name] = loadImage(image_files[i]);
+  }
+
+  // Loading calendar images
+  calendar_images.october_2022 = loadImage('october_2022.png');
+  calendar_images.november_2022 = loadImage('november_2022.png');
+
+  song = createAudio('cache_cache.mp3');
+}
 
 // Screen states
 const screen_state = {
@@ -35,7 +38,8 @@ const music_radius = 50; // Size of play/stop buttons
 let mirror_name = "Bryan";
 // Menu button setup
 const button_types = ['calendar_button', 'news_button', 'weather_button', 'health_button', 'music_button'];
-const buttons = []; // Array to store button objects
+const buttons = []; // Array to store button objects (rectangular)
+const circle_menu_buttons = []; // For circular menu buttons
 
 for(let i = 0; i < button_types.length; i++) {
   const button = createButton(button_types[i]);
@@ -46,49 +50,92 @@ for(let i = 0; i < button_types.length; i++) {
   // Set button position and size
   button.position(button_x, button_y);
   button.size(button.width);
+
+  buttons.push({
+    button: button,
+    x: button_x,
+    y: button_y,
+    width: button_width
+  });
 }
 
-let menuButton; let button_xmenu = 320;
-let button_ymenu = 610;
-let menuButton2; let button_xmenu2 = 300;
-let button_ymenu2 = 475;
+const circle_menu_button_properties = [
+  {x: 300, y: 475},
+  {x: 320, y: 610}
+];
+for (let i = 0; i < circle_menu_button_properties.length; i++) {
+  const circle_menu_button = createButton('circle_menu_button' + (i + 1));
+  const {x, y} = circle_menu_button_properties[i];
+  circle_menu_button.position(x, y);
+  circle_menu_buttons['circle_menu_button' + (i + 1)] = circle_menu_button;
+}
 
 // For options menu
-let clear_rect;
-let name_inp;
-let name_button;
-let namereset_button;
+const OPTIONS_RECTANGLE_WIDTH = 100;
+const OPTIONS_RECTANGLE_HEIGHT = 50;
+const NAME_INPUT_WIDTH = 200;
+const NAME_INPUT_HEIGHT = 30;
+
+let options_menu = {
+  options_rectangle: null,
+  name_input: null,
+  name_confirm_button: null,
+  name_reset_button: null
+};
+const options_menu_x = 200;
+const options_menu_y = 200;
 
 // For calendar
-let monthButton;
-let button_ymonth = 510;
+const CALENDAR_BUTTON_WIDTH = 100;
+const CALENDAR_BUTTON_HEIGHT = 50;
+const PREVIOUS_BUTTON_MONTH_X = 200;
+const PREVIOUS_BUTTON_MONTH_Y = 510;
 
-let monthButton2;
-let clicked = false;
+let calendar_screen = {
+  previous_month_button: null,
+  clicked: false, // If clicked is false, the November 2022 calendar will display. Otherwise,
+  // display the October 2022 calendar.
+  back_button: null
+};
 
 // For health
-let statsButton;
-let backButton;
-
-// For music
-let song;
+const HEALTH_BUTTON_WIDTH = 100;
+const HEALTH_BUTTON_HEIGHT = 50;
+let health_screen = {
+  see_more_stats_button: null,
+  back_button: null
+};
+health_screen.see_more_stats_button = createButton('See More Stats', x, y, HEALTH_BUTTON_WIDTH, HEALTH_BUTTON_HEIGHT);
+health_screen.back_button = back_button; // Reuse the previously defined back button.
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  mirror_img = loadImage('small_mirror.png'); // Mirror background
-  calendar_img = loadImage('icons/calendar.png'); // Calendar icon
-  news_img = loadImage('icons/news.png'); // News icon
-  weather_img = loadImage('icons/weather.png'); // Weather icon
-  health_img = loadImage('icons/health.png'); // Health icon
-  music_img = loadImage('icons/music.png'); // Music icon
-  options_img = loadImage('icons/gear.png'); // Options icon
-  power_img = loadImage('icons/power_offon.png'); // Power off/on icon
-  calendar_display = loadImage('images/calendarDisplay.png'); // October calendar
-  calendar_display2 = loadImage('images/calendarDisplay2.png'); // November calendar
-  news_feed = loadImage('images/news_feed.png'); // News feed image
-  cloud_img = loadImage('icons/cloudy.png'); // Cloud icon
-  play_img = loadImage('icons/play.png'); // Play button
-  stop_img = loadImage('icons/stop.png'); // Stop button
+  const image_files = ['small_mirror.png', 'icons/calendar.png', 'icons/news.png',
+  'icons/weather.png', 'icons/health.png', 'icons/music.png', 'icons/options.png',
+  'icons/power_button.png', 'images/october2022_calendar.png', 'images/november2022_calendar.png',
+  'images/news_feed.png', 'icons/cloudy_weather.png', 'icons/play_button.png', 
+  'icons/stop_button.png'];
+  let images = {};
+  for (let i = 0; i < image_files.length; i++) {
+    let img_name = getImageName(image_files[i]); // Get the image name from the file name.
+    images[img_name] = loadImage(image_files[i]); // Load the image and store it in the images object with its name as the key.
+  }
+  mirror_img = images['small_mirror'];
+  calendar_img = images['calendar'];
+  news_img = images['news'];
+  weather_img = images['weather'];
+  health_img = images['health'];
+  music_img = images['music'];
+  options_img = images['options'];
+  power_button_img = images['power_button'];
+  october_2022_display = images['october2022_calendar'];
+  november_2022_display = images['november2022_calendar'];
+  news_feed = images['news_feed'];
+  cloud_img = images['cloudy'];
+  play_button_img = images['play_button'];
+  stop_button_img = images['stop_button'];
+  
+  for(let )
 
   // Calendar button
   calendarButton = createButton("Calendar");
@@ -207,7 +254,11 @@ function setup() {
 
   // Song for music section
   song = loadSound('cachecache.mp3');
+}
 
+// Helper function to extract image name from file name
+function getImageName(filename) {
+  return filename.split('.').slice(0, -1).join('.');
 }
 
 function draw() {
@@ -497,7 +548,7 @@ function draw() {
   }
 }
 
-function windowReized() {
+function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
