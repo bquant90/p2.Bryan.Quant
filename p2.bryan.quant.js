@@ -1,44 +1,52 @@
+// NOTE: let is block-scoped, while var is function-scoped (more global)
 // Background
-var mirror_img;
+let mirror_img;
 
 // Icons
-var calendar_img;
-var news_img;
-var weather_img;
-var health_img;
-var music_img;
-var options_img;
-var power_img;
-var cloud_img;
-var play_img;
-var stop_img;
+let icons = [];
 
-// Images
-var calendar_display;
-var calendar_display2;
+function preload() {
+  icons[0] = loadImage('calendar.png');
+  icons[1] = loadImage('news.png');
+  icons[2] = loadImage('weather.png');
+  icons[3] = loadImage('health.png');
+  icons[4] = loadImage('music.png');
+  icons[5] = loadImage('options.png');
+  icons[6] = loadImage('power_button.png');
+  icons[7] = loadImage('cloudy_weather.png');
+  icons[8] = loadImage('play_button.png');
+  icons[9] = loadImage('stop_button.png');
+}
 
+// Calendar images
+let calendarImages = {};
+calendarImages.october_2022 = loadImage('october_2022.png');
+calendarImages.november_2022 = loadImage('november_2022.png');
 
-let currentScreen = 0; // 0 = Menu, 1 = Off
-let circleRad = 70; // Size of circle buttons
-let circleRad2 = 50; // Size of play/stop buttons
+// Screen states
+const screen_state = {
+  OFF: 0,
+  MENU: 1
+};
+let current_screen = screen_state.MENU;
+const circle_radius = 70; // Size of circle buttons
+const music_radius = 50; // Size of play/stop buttons
 
-// Buttons for menu
-var mir_name = "Bryan";
-let button_x = 350, button_width = 200, button_height = 75;
-let calendarButton;
-let button_ycal = 200;
+let mirror_name = "Bryan";
+// Menu button setup
+const button_types = ['calendar_button', 'news_button', 'weather_button', 'health_button', 'music_button'];
+const buttons = []; // Array to store button objects
 
-let newsButton;
-let button_ynews = 300;
+for(let i = 0; i < button_types.length; i++) {
+  const button = createButton(button_types[i]);
+  const button_x = 350;
+  const button_y = i * 100;
+  const button_width = 200;
 
-let weatherButton;
-let button_yweather = 400;
-
-let healthButton;
-let button_yhealth = 500;
-
-let musicButton;
-let button_ymusic = 600;
+  // Set button position and size
+  button.position(button_x, button_y);
+  button.size(button.width);
+}
 
 let menuButton; let button_xmenu = 320;
 let button_ymenu = 610;
@@ -198,7 +206,7 @@ function setup() {
   backButton.hide(); // Hidden at start
 
   // Song for music section
-  song = loadSound('dropit.mp3');
+  song = loadSound('cachecache.mp3');
 
 }
 
@@ -455,7 +463,7 @@ function draw() {
       clear_rect = rect(220, 300, 375, 410);
       fill(255);
       textSize(20);
-      text("Song 1: Drop It", 270, 400);
+      text("Song 1: Cache Cache", 270, 400);
 
       fill(255, 255, 255, 127);
       ellipse(450, 390, circleRad2, 45);
