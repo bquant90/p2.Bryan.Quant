@@ -1,7 +1,7 @@
-// NOTE: let is block-scoped, while var is function-scoped (more global)
 // Background
-let mirror_img;
+var mirror_img;
 
+<<<<<<< HEAD
 // Icons and images
 const image_files = ['calendar.png', 'news.png', 'weather.png', 'health.png', 'music.png', 'options.png', 'power_button.png', 'cloudy_weather.png', 'play_button.png', 'stop_button.png'];
 const images = {};
@@ -25,28 +25,47 @@ function preload() {
 
   song = createAudio('cache_cache.mp3');
 }
+=======
+// Icons
+var calendar_img;
+var news_img;
+var weather_img;
+var health_img;
+var music_img;
+var options_img;
+var power_img;
+var cloud_img;
+var play_img;
+var stop_img;
 
-// Screen states
-const screen_state = {
-  OFF: 0,
-  MENU: 1
-};
-let current_screen = screen_state.MENU;
-const circle_radius = 70; // Size of circle buttons
-const music_radius = 50; // Size of play/stop buttons
+// Images
+var calendar_display;
+var calendar_display2;
 
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
+
+let currentScreen = 0; // 0 = Menu, 1 = Off
+let circleRad = 70; // Size of circle buttons
+let circleRad2 = 50; // Size of play/stop buttons
+
+<<<<<<< HEAD
 let mirror_name = "Bryan";
 // Menu button setup
 const button_types = ['calendar_button', 'news_button', 'weather_button', 'health_button', 'music_button'];
 const buttons = []; // Array to store button objects (rectangular)
 const circle_menu_buttons = []; // For circular menu buttons
+=======
+// Buttons for menu
+var mir_name = "Bryan";
+let button_x = 350, button_width = 200, button_height = 75;
+let calendarButton;
+let button_ycal = 200;
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
-for(let i = 0; i < button_types.length; i++) {
-  const button = createButton(button_types[i]);
-  const button_x = 350;
-  const button_y = i * 100;
-  const button_width = 200;
+let newsButton;
+let button_ynews = 300;
 
+<<<<<<< HEAD
   // Set button position and size
   button.position(button_x, button_y);
   button.size(button.width);
@@ -58,6 +77,16 @@ for(let i = 0; i < button_types.length; i++) {
     width: button_width
   });
 }
+=======
+let weatherButton;
+let button_yweather = 400;
+
+let healthButton;
+let button_yhealth = 500;
+
+let musicButton;
+let button_ymusic = 600;
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 const circle_menu_button_properties = [
   {x: 300, y: 475},
@@ -253,8 +282,12 @@ function setup() {
   backButton.hide(); // Hidden at start
 
   // Song for music section
+<<<<<<< HEAD
   song = loadSound('cachecache.mp3');
 }
+=======
+  song = loadSound('dropit.mp3');
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 // Helper function to extract image name from file name
 function getImageName(filename) {
@@ -514,7 +547,7 @@ function draw() {
       clear_rect = rect(220, 300, 375, 410);
       fill(255);
       textSize(20);
-      text("Song 1: Cache Cache", 270, 400);
+      text("Song 1: Drop It", 270, 400);
 
       fill(255, 255, 255, 127);
       ellipse(450, 390, circleRad2, 45);
