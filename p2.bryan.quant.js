@@ -2,18 +2,6 @@
 var mirror_img;
 
 // Icons
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 var calendar_img;
 var news_img;
 var weather_img;
@@ -24,9 +12,6 @@ var power_img;
 var cloud_img;
 var play_img;
 var stop_img;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 // Images
 var calendar_display;
@@ -54,18 +39,7 @@ let button_yhealth = 500;
 
 let musicButton;
 let button_ymusic = 600;
-=======
-=======
->>>>>>> parent of dfa338e (Slight changes)
-=======
->>>>>>> parent of dfa338e (Slight changes)
 let icons = [];
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 // Images
 var calendar_display;
@@ -85,19 +59,10 @@ let button_ycal = 200;
 let newsButton;
 let button_ynews = 300;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  // Set button position and size
-  button.position(button_x, button_y);
-  button.size(button.width);
-}
->>>>>>> parent of dfa338e (Slight changes)
-=======
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
+// Set button position and size
+button.position(button_x, button_y);
+button.size(button.width);
+
 let weatherButton;
 let button_yweather = 400;
 
@@ -106,13 +71,6 @@ let button_yhealth = 500;
 
 let musicButton;
 let button_ymusic = 600;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 let menuButton; let button_xmenu = 320;
 let button_ymenu = 610;
@@ -272,34 +230,7 @@ function setup() {
   backButton.hide(); // Hidden at start
 
   // Song for music section
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  song = loadSound('cachecache.mp3');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
   song = loadSound('dropit.mp3');
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
->>>>>>> parent of dfa338e (Slight changes)
-=======
->>>>>>> parent of dfa338e (Slight changes)
-=======
->>>>>>> parent of dfa338e (Slight changes)
-=======
-  song = loadSound('dropit.mp3');
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
-  song = loadSound('dropit.mp3');
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-=======
-  song = loadSound('dropit.mp3');
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
-
 }
 
 function draw() {
