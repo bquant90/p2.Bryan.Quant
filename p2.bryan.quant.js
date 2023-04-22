@@ -1,31 +1,6 @@
 // Background
 var mirror_img;
 
-<<<<<<< HEAD
-// Icons and images
-const image_files = ['calendar.png', 'news.png', 'weather.png', 'health.png', 'music.png', 'options.png', 'power_button.png', 'cloudy_weather.png', 'play_button.png', 'stop_button.png'];
-const images = {};
-
-// Calendar images
-let calendar_images = {};
-
-// For music
-let song;
-
-function preload() {
-  // Loading images
-  for (let i = 0; i < image_files.length; i++) {
-    const image_name = image_files[i].split('.')[0];
-    images[image_name] = loadImage(image_files[i]);
-  }
-
-  // Loading calendar images
-  calendar_images.october_2022 = loadImage('october_2022.png');
-  calendar_images.november_2022 = loadImage('november_2022.png');
-
-  song = createAudio('cache_cache.mp3');
-}
-=======
 // Icons
 var calendar_img;
 var news_img;
@@ -42,42 +17,20 @@ var stop_img;
 var calendar_display;
 var calendar_display2;
 
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 let currentScreen = 0; // 0 = Menu, 1 = Off
 let circleRad = 70; // Size of circle buttons
 let circleRad2 = 50; // Size of play/stop buttons
 
-<<<<<<< HEAD
-let mirror_name = "Bryan";
-// Menu button setup
-const button_types = ['calendar_button', 'news_button', 'weather_button', 'health_button', 'music_button'];
-const buttons = []; // Array to store button objects (rectangular)
-const circle_menu_buttons = []; // For circular menu buttons
-=======
 // Buttons for menu
 var mir_name = "Bryan";
 let button_x = 350, button_width = 200, button_height = 75;
 let calendarButton;
 let button_ycal = 200;
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 let newsButton;
 let button_ynews = 300;
 
-<<<<<<< HEAD
-  // Set button position and size
-  button.position(button_x, button_y);
-  button.size(button.width);
-
-  buttons.push({
-    button: button,
-    x: button_x,
-    y: button_y,
-    width: button_width
-  });
-}
-=======
 let weatherButton;
 let button_yweather = 400;
 
@@ -86,7 +39,6 @@ let button_yhealth = 500;
 
 let musicButton;
 let button_ymusic = 600;
->>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 const circle_menu_button_properties = [
   {x: 300, y: 475},
