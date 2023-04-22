@@ -4,6 +4,7 @@ var mirror_img;
 // Icons
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var calendar_img;
 var news_img;
 var weather_img;
@@ -42,6 +43,8 @@ let button_yhealth = 500;
 let musicButton;
 let button_ymusic = 600;
 =======
+=======
+>>>>>>> parent of dfa338e (Slight changes)
 =======
 >>>>>>> parent of dfa338e (Slight changes)
 let icons = [];
@@ -252,10 +255,13 @@ function setup() {
   song = loadSound('cachecache.mp3');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
   song = loadSound('dropit.mp3');
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
+=======
+>>>>>>> parent of dfa338e (Slight changes)
 =======
 >>>>>>> parent of dfa338e (Slight changes)
 =======
