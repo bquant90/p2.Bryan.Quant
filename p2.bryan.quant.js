@@ -5,6 +5,9 @@ var mirror_img;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 var calendar_img;
 var news_img;
 var weather_img;
@@ -15,6 +18,7 @@ var power_img;
 var cloud_img;
 var play_img;
 var stop_img;
+<<<<<<< HEAD
 
 // Images
 var calendar_display;
@@ -48,50 +52,43 @@ let button_ymusic = 600;
 =======
 >>>>>>> parent of dfa338e (Slight changes)
 let icons = [];
+=======
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
-function preload() {
-  icons[0] = loadImage('calendar.png');
-  icons[1] = loadImage('news.png');
-  icons[2] = loadImage('weather.png');
-  icons[3] = loadImage('health.png');
-  icons[4] = loadImage('music.png');
-  icons[5] = loadImage('options.png');
-  icons[6] = loadImage('power_button.png');
-  icons[7] = loadImage('cloudy_weather.png');
-  icons[8] = loadImage('play_button.png');
-  icons[9] = loadImage('stop_button.png');
-}
+// Images
+var calendar_display;
+var calendar_display2;
 
-// Calendar images
-let calendarImages = {};
-calendarImages.october_2022 = loadImage('october_2022.png');
-calendarImages.november_2022 = loadImage('november_2022.png');
 
-// Screen states
-const screen_state = {
-  OFF: 0,
-  MENU: 1
-};
-let current_screen = screen_state.MENU;
-const circle_radius = 70; // Size of circle buttons
-const music_radius = 50; // Size of play/stop buttons
+let currentScreen = 0; // 0 = Menu, 1 = Off
+let circleRad = 70; // Size of circle buttons
+let circleRad2 = 50; // Size of play/stop buttons
 
-let mirror_name = "Bryan";
-// Menu button setup
-const button_types = ['calendar_button', 'news_button', 'weather_button', 'health_button', 'music_button'];
-const buttons = []; // Array to store button objects
+// Buttons for menu
+var mir_name = "Bryan";
+let button_x = 350, button_width = 200, button_height = 75;
+let calendarButton;
+let button_ycal = 200;
 
-for(let i = 0; i < button_types.length; i++) {
-  const button = createButton(button_types[i]);
-  const button_x = 350;
-  const button_y = i * 100;
-  const button_width = 200;
+let newsButton;
+let button_ynews = 300;
 
+<<<<<<< HEAD
   // Set button position and size
   button.position(button_x, button_y);
   button.size(button.width);
 }
 >>>>>>> parent of dfa338e (Slight changes)
+=======
+let weatherButton;
+let button_yweather = 400;
+
+let healthButton;
+let button_yhealth = 500;
+
+let musicButton;
+let button_ymusic = 600;
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 let menuButton; let button_xmenu = 320;
 let button_ymenu = 610;
@@ -252,6 +249,7 @@ function setup() {
 
   // Song for music section
 <<<<<<< HEAD
+<<<<<<< HEAD
   song = loadSound('cachecache.mp3');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,6 +264,9 @@ function setup() {
 >>>>>>> parent of dfa338e (Slight changes)
 =======
 >>>>>>> parent of dfa338e (Slight changes)
+=======
+  song = loadSound('dropit.mp3');
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 }
 
