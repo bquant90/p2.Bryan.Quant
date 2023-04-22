@@ -17,7 +17,6 @@ var stop_img;
 var calendar_display;
 var calendar_display2;
 
-
 let currentScreen = 0; // 0 = Menu, 1 = Off
 let circleRad = 70; // Size of circle buttons
 let circleRad2 = 50; // Size of play/stop buttons
@@ -45,32 +44,9 @@ let icons = [];
 var calendar_display;
 var calendar_display2;
 
-
-let currentScreen = 0; // 0 = Menu, 1 = Off
-let circleRad = 70; // Size of circle buttons
-let circleRad2 = 50; // Size of play/stop buttons
-
-// Buttons for menu
-var mir_name = "Bryan";
-let button_x = 350, button_width = 200, button_height = 75;
-let calendarButton;
-let button_ycal = 200;
-
-let newsButton;
-let button_ynews = 300;
-
 // Set button position and size
 button.position(button_x, button_y);
 button.size(button.width);
-
-let weatherButton;
-let button_yweather = 400;
-
-let healthButton;
-let button_yhealth = 500;
-
-let musicButton;
-let button_ymusic = 600;
 
 let menuButton; let button_xmenu = 320;
 let button_ymenu = 610;
