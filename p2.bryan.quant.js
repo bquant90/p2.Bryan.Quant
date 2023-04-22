@@ -7,6 +7,9 @@ var mirror_img;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 =======
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 =======
@@ -21,6 +24,7 @@ var power_img;
 var cloud_img;
 var play_img;
 var stop_img;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -60,6 +64,8 @@ let icons = [];
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 =======
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
+=======
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 
 // Images
 var calendar_display;
@@ -81,12 +87,15 @@ let button_ynews = 300;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Set button position and size
   button.position(button_x, button_y);
   button.size(button.width);
 }
 >>>>>>> parent of dfa338e (Slight changes)
 =======
+=======
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 =======
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 let weatherButton;
@@ -98,6 +107,9 @@ let button_yhealth = 500;
 let musicButton;
 let button_ymusic = 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
+=======
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 =======
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
@@ -263,6 +275,7 @@ function setup() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   song = loadSound('cachecache.mp3');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -277,6 +290,9 @@ function setup() {
 >>>>>>> parent of dfa338e (Slight changes)
 =======
 >>>>>>> parent of dfa338e (Slight changes)
+=======
+  song = loadSound('dropit.mp3');
+>>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
 =======
   song = loadSound('dropit.mp3');
 >>>>>>> parent of 5e50d40 (Revamp of the magic mirror)
